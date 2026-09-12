@@ -37,7 +37,7 @@ pipeline {
 
         stage('Push Frontend') {
             steps {
-                sh 'docker push sithum322/tshirt-frontend:v1'
+                sh 'docker push sithum322/tshirt-frontend:v2'
             }
         }
 
