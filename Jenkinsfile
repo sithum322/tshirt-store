@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build Frontend Image') {
             steps {
-                sh 'docker build -t sithum322/tshirt-frontend:v2 ./frontend'
+                sh 'docker build -t sithum322/tshirt-frontend:latest ./frontend'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
 
         stage('Push Frontend') {
             steps {
-                sh 'docker push sithum322/tshirt-frontend:v2'
+                sh 'docker push sithum322/tshirt-frontend:latest'
             }
         }
 
