@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tshirt-database
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/sithum322/tshirt-store.git
+    targetRevision: main
+    path: k8s/database
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: database
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
